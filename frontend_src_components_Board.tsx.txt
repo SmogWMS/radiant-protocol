@@ -1,0 +1,13 @@
+import React from 'react';
+
+export default function Board({ board, onClick }: any) {
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 60px)', gap: '5px' }}>
+      {board.map((cell: any, idx: number) => (
+        <div key={idx} onClick={() => onClick(idx)} style={{ width: '60px', height: '60px', display: 'flex', justifyContent: 'center', alignItems: 'center', border: '1px solid black', fontSize: '24px', cursor: 'pointer' }}>
+          {cell === 1 ? 'X' : cell === 2 ? 'O' : ''}
+        </div>
+      ))}
+    </div>
+  );
+}
